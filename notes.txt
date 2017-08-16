@@ -3,3 +3,4 @@
 -dodati hover na portfolio slike
 -smanjiti naslove za mobilne 
 -srediti navigaciju za mobilne (prelazi preko hero)
+-
