@@ -1,0 +1,83 @@
+doctype html
+html
+	head
+		title= title
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/css/app.css')
+		link(rel='stylesheet', href='/stylesheets/bulma.css')
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Domine:400,700')
+	body
+		nav.navbar.is-transparent
+			div.navbar-brand
+				a.navbar-item(href='/')
+					h1.title.is-4 Predrag Stosic
+				a.navbar-item.is-hidden-desktop(href='https://github.com/stoleS', target="_blank")
+					span.icon(style='color: #333;')
+						i.fa.fa-github
+				a.navbar-item.is-hidden-desktop(href='https://twitter.com/', target="_blank")
+					span.icon(style='color: #55acee;')
+						i.fa.fa-twitter
+				div.navbar-burger.burger(data-target='navMenuTransparentExample')
+					span
+					span
+					span
+			div#navMenuTransparentExample.navbar-menu
+				div.navbar-start
+					div.navbar-item.has-dropdown.is-hoverable
+						a.navbar-link.is-active(href='/blog') Blog
+						div.navbar-dropdown.is-boxed(data-style="width: 18rem;")
+							a.navbar-item(href='#')
+								div.navbar-content
+									p
+										small.has-text-info 01 Aug 2017
+									p Blog Post 1
+							a.navbar-item(href='#')
+								div.navbar-content
+									p
+										small.has-text-info 07 Aug 2017
+									p Another Post
+							a.navbar-item(href='#')
+								div.navbar-content
+									p
+										small.has-text-info 14 Aug 2017
+									p Yet Another Post
+							a.navbar-item(href='#')
+								div.navbar-content
+									p
+										small.has-text-info 21 Aug 2017
+									p Even more posts
+							hr.navbar-divider
+							div.navbar-item
+								div.navbar-content
+									div.level.is-mobile
+										div.level-left
+											div.level-item
+												strong Stay up to date!
+										div.level-right
+											div.level-item
+												a.button.is-rss.is-small(href='#')
+													span.icon.is-small
+														i.fa.fa-rss
+													span Subscribe
+					a.navbar-item(href='#') About
+					hr.navbar-divider
+					a.navbar-item(href='#') Portfolio
+					hr.navbar-divider
+					a.navbar-item(href='#') Contact
+				div.navbar-end
+					div.navbar-item.is-hidden-mobile
+						div.field.is-grouped
+							p.control
+								a.twitter(href='#').has-text-grey-darker
+									span.icon
+										i.fa.fa-twitter
+									span Twitter
+							p.control
+								a(href='#').has-text-grey-darker
+									span.icon
+										i.fa.fa-github
+									span Github
+		block content
+		script(src='/javascripts/navbar.js')

@@ -1,0 +1,304 @@
+extends layout
+
+block content
+	section.hero.landing.is-fullheight
+		div.hero-body
+			div.container
+				div.columns
+					div.column
+						h1.title.is-1 Hi, my name 
+							br
+							|	is Predrag
+						p.subtitle.is-3 I'm a web developer, 
+							br
+							| so let's build something 
+							br
+							| great together!
+		a.is-large.icon-down
+			span.icon.is-large
+				i.fa.fa-angle-double-down
+					div.column.person
+	section.section.about-section
+		div.container
+			h1.title.is-2 About me
+			div.columns.is-desktop.about-text
+				div.column.is-half.is-offset-one-quarter
+					p.subtitle.is-6#me Hi, my name is Predrag. I'm web developer from Serbia. Programming is my passion and something that inspires me. I graduated High School, department related to Computer Science, and I'm currently student at Higher Medical and Business-Technological School of Applied Studies. Some of my other passions are cars, gym, traveling...
+					div.about-buttons
+						button.button.is-primary.is-outlined My Resume
+						button.button.is-primary Hire Me
+			div.columns.is-desktop
+				div.column.is-1
+				div.column.about-education
+					h2.title.is-4 Education
+					div
+						p
+							small September 2013 - June 2017
+							p.is-size-6 Lorem ipsum dolor
+							small University of studies, Serbia
+					div
+						p
+							small September 2013 - June 2017
+							p.is-size-6 Lorem ipsum dolor
+							small University of studies, Serbia
+					div
+						p
+							small September 2013 - June 2017
+							p.is-size-6 Lorem ipsum dolor
+							small University of studies, Serbia
+				div.column.about-jobs
+					h2.title.is-4 What i'm doing
+					div
+						p.subtitle.is-size-6 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+						div.field.is-grouped.columns
+							div.column
+								article.media#support
+									figure.media-left
+										p.control
+											span.icon.is-large
+												i.fa.fa-headphones
+									span.type Support
+										br
+										small Friendly
+							div.column
+								article.media
+									figure.media-left
+										p.control
+											span.icon.is-large
+												i.fa.fa-paint-brush
+									span.type Design
+										br
+										small Website
+					div.field.is-grouped.columns
+						div.column
+							article.media#backend
+								figure.media-left
+									p.control
+										span.icon.is-large
+											i.fa.fa-server
+								span.type Backend
+									br
+									small Node.JS
+						div.column
+							article.media
+								figure.media-left
+									p.control
+										span.icon.is-large
+											i.fa.fa-mobile
+								span.type Responsive
+									br
+									small Mobile First
+				div.column.about-skills
+					h2.title.is-4 Skills & abilities
+					div.progressBar
+						h3.is-5 HTML5/Pug
+						div.progressBarContainer
+							div.progressBarValue.value-85
+						p
+							small 85%
+					div.progressBar
+						h3.is-5 CSS3/Sass
+						div.progressBarContainer
+							div.progressBarValue.value-80
+						p
+							small 80%
+					div.progressBar
+						h3.is-5 JavaScript
+						div.progressBarContainer
+							div.progressBarValue.value-75
+						p
+							small 75%
+					div.progressBar
+						h3.is-5 MEAN
+						div.progressBarContainer
+							div.progressBarValue.value-50
+						p
+							small 50%
+				div.column.is-1
+	section.section.portfolio-section
+		div.container
+			h1.title.is-2 Portfolio
+			div.tile.is-ancestor
+				div.tile.is-12.is-vertical
+					div.tile
+						div.tile.is-parent.is-vertical
+							article.tile.is-child.box.port-1
+							article.tile.is-child.box.port-2
+						div.tile.is-parent
+							article.tile.is-child.box.port-3
+						div.tile.is-parent.is-vertical
+							article.tile.is-child.box.port-4
+							article.tile.is-child.box.port-5
+	section.section.testimonials-section
+		div.container.has-text-centered
+			h1.title.is-2 Testimonials
+			div.columns
+				div.column.is-8.is-offset-2
+					div.box.has-ribbon
+						div.ribbon 
+							span.is-medium
+								i.fa.fa-quote-left
+						figure.image.is-96x96
+						p.subtitle.testimonial
+							|	“There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
+						p.subtitle.is-6 
+							b Jeff Atwood
+							| 
+							br
+							|
+							small Designer, Something
+	section.section.blog-section
+		div.container
+			h1.title.is-2 Latest post
+			div.columns
+				div.column.is-5.is-offset-1
+					div.card
+						div.card-image
+							figure.image.is-2by1.post-1
+						div.card-content
+							div.media
+								div.media-left
+									figure.image.is-48x48.profile
+								div.media-content
+									p.title.is-4 John Smith
+									p.subtitle.is-6 @johnsmith
+							div.content
+								| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+								br
+								a Read more
+								br
+								small 11:09 PM - 1 Jan 2016
+				div.column.is-5
+					div.card
+						div.card-image
+							figure.image.is-2by1.post-2
+						div.card-content
+							div.media
+								div.media-left
+									figure.image.is-48x48.profile
+								div.media-content
+									p.title.is-4 John Smith
+									p.subtitle.is-6 @johnsmith
+							div.content
+								| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+								br
+								a Read more
+								br
+								small 11:09 PM - 1 Jan 2016
+			div.columns
+				div.column.is-5.is-offset-1
+					div.card
+						div.card-image
+							figure.image.is-2by1.post-3
+						div.card-content
+							div.media
+								div.media-left
+									figure.image.is-48x48.profile
+								div.media-content
+									p.title.is-4 John Smith
+									p.subtitle.is-6 @johnsmith
+							div.content
+								| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+								br
+								a Read more
+								br
+								small 11:09 PM - 1 Jan 2016
+				div.column.is-5
+					div.card
+						div.card-image
+							figure.image.is-2by1.post-4
+						div.card-content
+							div.media
+								div.media-left
+									figure.image.is-48x48.profile
+								div.media-content
+									p.title.is-4 John Smith
+									p.subtitle.is-6 @johnsmith
+							div.content
+								| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+								br
+								a Read more
+								br
+								small 11:09 PM - 1 Jan 2016
+	nav.level.social
+		div.level-item.has-text-centered
+			div
+				p.heading Projects
+				p.title 245
+		div.level-item.has-text-centered
+			div
+				p.heading Rewards
+				p.title 14
+		div.level-item.has-text-centered
+			div
+				p.heading Cups of coffee
+				p.title 3,456
+		div.level-item.has-text-centered
+			div
+				p.heading Recommendations
+				p.title 57
+	footer.footer.footer-section(style="padding-bottom: 48px")
+		div.container
+			div.content.has-text-centered(style="margin-bottom: 48px")
+				h1.title.is-2 Get in touch
+				p Feel free to ask anything.
+			div.columns
+				div.column.is-half.is-offset-one-quarter(style="margin-bottom: 36px")
+					div.field
+						p.control
+							input.input(type='text' placeholder='Name')
+					div.field
+						p.control
+							input.input(type='email' placeholder='Email')
+					div.field
+						p.control
+							textarea.textarea(placeholder='Enter Message')
+					div.level
+						div.level-left
+							div.level-item
+						div.level-right
+							div.level-item
+								button.button.is-primary Submit
+			div.columns
+				div.column.is-4.is-offset-4
+					nav.level
+						div.level-item.has-text-centered
+							div
+								p
+									a.icon.is-medium
+										i.fa.fa-github
+						div.level-item.has-text-centered
+							div
+								p
+									a.icon.is-medium
+										i.fa.fa-facebook
+						div.level-item.has-text-centered
+							div
+								p
+									a.icon.is-medium
+										i.fa.fa-linkedin
+						div.level-item.has-text-centered
+							div
+								p
+									a.icon.is-medium
+										i.fa.fa-instagram
+						div.level-item.has-text-centered
+							div
+								p
+									a.icon.is-medium
+										i.fa.fa-twitter
+						div.level-item.has-text-centered
+							div
+								p
+									a.icon.is-medium
+										i.fa.fa-dropbox
+	div.has-text-centered.footer-text
+		p 
+			small Coded with &hearts; by 
+				span Predrag 
+				| , &copy; 2017
+
+
+
+
+

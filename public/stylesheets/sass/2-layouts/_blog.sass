@@ -1,0 +1,18 @@
+/* BLOG STYLES */
+
+.blog-section
+	h1
+		@include liness
+
+	@for $i from 1 through 4
+		.post-#{$i}
+			background:
+				image: url(../../images/blog#{$i}.jpg)
+				size: cover
+				position: center center	
+	
+	.profile
+		background: 
+			image: url(../../images/profile.jpeg)
+			size: cover
+			position: center center	

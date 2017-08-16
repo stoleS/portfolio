@@ -1,0 +1,37 @@
+.has-ribbon
+  position: relative
+  min-height: 52px
+
+.has-ribbon-left
+  position: relative
+  min-height: 52px
+  .ribbon
+    right: auto
+    left: 0
+
+.has-ribbon-bottom
+  .ribbon
+    position: relative
+    min-height: 52px
+    top: auto
+    bottom: 10px
+
+.ribbon
+  position: absolute
+  display: flex 
+  align-items: center
+  justify-content: center
+  top: -10px
+  right: -10px
+  height: 45px
+  width: 45px
+  color: #fff
+  font-weight: 600
+  z-index: 2
+  &::before
+    position: absolute
+    display: block
+    width: 0
+    height: 0
+    content: ""
+  background-color: #00d1b2
