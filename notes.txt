@@ -1,6 +1,0 @@
--dodati shadow na nav pri scroll i fiksirati ga
--srediti hover na footer linkovima
--dodati hover na portfolio slike
--smanjiti naslove za mobilne 
--srediti navigaciju za mobilne (prelazi preko hero)
--
