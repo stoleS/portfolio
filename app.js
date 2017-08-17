@@ -15,7 +15,7 @@ var flash = require('connect-flash')
 var index = require('./routes/index');
 var users = require('./routes/users');
 var blog = require('./routes/blog');
-var posts = require('./routes/posts');
+var admin = require('./routes/admin');
 
 var app = express();
 
@@ -76,7 +76,7 @@ app.use(function(req, res, next) {
 app.use('/', index);
 app.use('/users', users);
 app.use('/blog', blog);
-app.use('/posts', posts);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
