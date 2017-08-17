@@ -3,9 +3,9 @@ var router = express.Router();
 var mongo = require('mongodb');
 var db = require('monk')('localhost/myblog');
 
-router.get('/posts', function(req, res, next) {
-	res.render('addpost', {
-		'title': 'Add Post'
+router.get('/', function(req, res, next) {
+	res.render('admin/admin', {
+		'title': 'This is admin page'
 	});
 });
 

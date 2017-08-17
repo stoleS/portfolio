@@ -481,6 +481,10 @@ p {
 .title-admin {
   color: #4a4a4a; }
 
+/* ADMIN/POST STYLES */
+.hidden {
+  display: none; }
+
 /* ==============================
  * MODULE STYLES
  * ============================== */

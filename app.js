@@ -13,9 +13,9 @@ var upload = multer({ dest: './public/images/uploads' })
 var flash = require('connect-flash')
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var blog = require('./routes/blog');
-var admin = require('./routes/admin');
+var admin = require('./routes/admin/admin');
+var posts = require('./routes/admin/posts');
 
 var app = express();
 
@@ -74,9 +74,9 @@ app.use(function(req, res, next) {
 })
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/blog', blog);
 app.use('/admin', admin);
+app.use('/admin/posts', posts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
