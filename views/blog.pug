@@ -18,7 +18,8 @@ block content
 								div.column.is-4
 									div.card
 										div.card-image
-											figure.image.is-2by1.post-1
+											figure.image.is-2by1
+												img(src='/images/uploads/' + rowPost.mainImage)
 										div.card-content
 											div.media
 												div.media-left
@@ -27,7 +28,7 @@ block content
 													p.title.is-4
 														a(href='/post/show/' + rowPost._id)=rowPost.title
 													p.subtitle.is-6=rowPost.author
-											div.content=rowPost.body
+											div.content=rowPost.shortBody
 												br
 												a(href='/post/show/' + rowPost._id) Read more
 												br

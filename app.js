@@ -6,6 +6,7 @@ var expressValidator = require('express-validator');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+var async = require("async");
 var mongo = require('mongodb');
 var db = require('monk')('localhost/myblog');
 var multer = require('multer');

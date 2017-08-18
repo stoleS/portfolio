@@ -404,14 +404,13 @@ p {
     margin-bottom: 10px !important; }
   .footer-section p {
     color: #F9F9F9; }
-
-.field {
-  margin: 0 !important;
-  border-radius: 0 !important; }
-  .field .input, .field textarea {
-    background: #555 !important;
-    border-radius: 0;
-    border: none; }
+  .footer-section .field {
+    margin: 0 !important;
+    border-radius: 0 !important; }
+    .footer-section .field .input, .footer-section .field textarea {
+      background: #555 !important;
+      border-radius: 0;
+      border: none; }
 
 .footer-text p {
   background: #222;

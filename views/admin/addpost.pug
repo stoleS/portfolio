@@ -69,12 +69,12 @@ html
         section.section
           .tabs.is-centered.is-toggle
             ul
-              li#all-tab.is-active
-                a(onClick="switchToAll()") All posts
-              li#add-tab
+              li#add-tab.is-active
                 a(onClick="switchToAdd()") Add post
+              li#all-tab
+                a(onClick="switchToAll()") All posts
         .conatiner
-          #all-tab-content
+          #all-tab-content.hidden
             .columns
               .column.is-10.is-offset-1
                 table.table.is-fullwidth.is-bordered
@@ -92,8 +92,55 @@ html
                           td=post.category
                           td=post.author
                           td=moment(post.date).format('DD-MM-YYYY')                      
-          #add-tab-content.hidden
-            h1.title This is add post tab
+          #add-tab-content
+            .columns
+              .column.is-half.is-offset-one-quarter
+                ul.errors
+                  if errors
+                    each error, i in errors
+                      li.is-marginless.box.has-text-danger=error.msg
+                form(method='post', action='./posts', enctype='multipart/form-data')
+                  .field
+                    label.label Title:
+                    .control
+                      input.input(type='text', name='title', required)
+                  .field
+                    label.label Category:
+                    .control
+                      .select
+                        select(name='category')
+                          if categories
+                            each category, i in categories
+                              option(value=category.title)=category.title
+                  .field
+                    label.label Short Body:
+                    .control
+                      input.input(type='text', name='shortBody', required)
+                  .field 
+                    label.label Body:
+                    .control
+                      textarea.textarea(name='body')
+                  .field
+                    .file.has-name.is-dark
+                      label.file-label
+                        input.file-input(type='file', name='mainImage', required)
+                        span.file-cta
+                          span.file-icon
+                            i.fa.fa-upload
+                          span.file-label Choose a file...
+                        span.file-name
+                  .field
+                    label.label Author:
+                      .control
+                      .select
+                        select(name='author')
+                          option(value='Predrag Stošić') Predrag Stošić
+                  .field.is-grouped
+                    .control
+                      button.button.is-primary Submit
+                    .control
+                      button.button.is-link Reset
+
 
     script(src='../javascripts/jquery-3.2.1.slim.min.js')
     script.
@@ -118,5 +165,10 @@ html
         $("#all-tab-content").addClass("hidden");
         $("#add-tab-content").addClass("hidden");
       }
+      
+      $('input[type=file]').change(function(e){
+        $(this).parents('.file-label').find('.file-name').text(e.target.files[0].name);
+      });
+    
 
           
