@@ -452,7 +452,8 @@ p {
   margin-top: 12px; }
   .aside .main {
     padding: 40px;
-    color: #6F7B7E; }
+    color: #6F7B7E;
+    position: fixed; }
     @media screen and (max-width: 1025px) {
       .aside .main {
         padding: 10px; } }
@@ -483,6 +484,9 @@ p {
 /* ADMIN/POST STYLES */
 .hidden {
   display: none; }
+
+form {
+  margin-bottom: 48px; }
 
 /* ==============================
  * MODULE STYLES

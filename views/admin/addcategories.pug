@@ -1,0 +1,36 @@
+extends adminlayout
+
+block content
+	section.section
+		.tabs.is-centered.is-toggle
+			ul
+				li.is-active
+					a Categories
+	.conatiner
+		.columns
+			.column.is-2.is-offset-5
+				table.table.is-fullwidth.is-bordered
+					thead
+						th.has-text-centered Category title
+					tbody
+						if categories
+							each category, i in categories
+								tr
+									td.has-text-centered=category.title
+	section.section
+		.tabs.is-centered.is-toggle
+			ul
+				li.is-active
+					a Add category
+		.columns
+				.column.is-half.is-offset-one-quarter
+					form(method='post', action='./categories', enctype='application/x-www-form-urlencoded')
+						.field
+							label.label Category name:
+							.control
+								input.input(type='text', name='categoryName', required)
+						.field.is-grouped
+							.control
+								button.button.is-success Submit
+							.control
+								button.button.is-link Reset

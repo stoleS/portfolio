@@ -1,174 +1,111 @@
-doctype html
-html
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Admin - Free Bulma template
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/stylesheets/css/app.css')
-    link(rel='stylesheet', href='/stylesheets/bulma.css')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Domine:400,700')
-    style.
-      .box {
-        padding: 25px;
-      }
-  body
-    .columns(style="margin-bottom: 0")
-      aside.column.is-2.aside.hero.is-fullheight.is-hidden-mobile
-        div
-          .main
-            .title 
-              a(href='/')
-                p Main page
-            .title 
-              a(href='/admin')
-                p Dashboard
-            a.item.active(href='/')
-              span.icon
-                i.fa.fa-clipboard
-              span.name Posts
-            a.item(href='#')
-              span.icon
-                i.fa.fa-th-list
-              span.name Categories
-            a.item(href='#')
-              span.icon
-                i.fa.fa-picture-o
-              span.name Projects
-            a.item(href='#')
-              span.icon
-                i.fa.fa-quote-right 
-              span.name Testimonials
-            a.item(href='#')
-              span.icon
-                i.fa.fa-comments
-              span.name Messages
-            a.item(href='#')
-              span.icon
-                i.fa.fa-sign-out
-              span.name Sign out
-      .column.is-10.admin-panel
-        nav#top.nav.has-shadow
-          .container
-            .nav-left
-              h1.title.is-4.nav-item Welcome Predrag
-            span.nav-toggle
-              span
-              span
-              span
-            .nav-right.nav-menu.is-hidden-tablet
-              a.nav-item.is-active(href='#')
-                | Posts/Add posts
-              a.nav-item(href='#')
-                | Activity
-              a.nav-item(href='#')
-                | Timeline
-              a.nav-item(href='#')
-                | Folders
-        section.section
-          .tabs.is-centered.is-toggle
-            ul
-              li#add-tab.is-active
-                a(onClick="switchToAdd()") Add post
-              li#all-tab
-                a(onClick="switchToAll()") All posts
-        .conatiner
-          #all-tab-content.hidden
-            .columns
-              .column.is-10.is-offset-1
-                table.table.is-fullwidth.is-bordered
-                  thead
-                    th Post Title
-                    th Category
-                    th Author
-                    th Date
-                  tbody
-                    if posts
-                      each post, i in posts
-                        tr
-                          td
-                            a(href='/post/show/' + post._id)=post.title
-                          td=post.category
-                          td=post.author
-                          td=moment(post.date).format('DD-MM-YYYY')                      
-          #add-tab-content
-            .columns
-              .column.is-half.is-offset-one-quarter
-                ul.errors
-                  if errors
-                    each error, i in errors
-                      li.is-marginless.box.has-text-danger=error.msg
-                form(method='post', action='./posts', enctype='multipart/form-data')
-                  .field
-                    label.label Title:
-                    .control
-                      input.input(type='text', name='title', required)
-                  .field
-                    label.label Category:
-                    .control
-                      .select
-                        select(name='category')
-                          if categories
-                            each category, i in categories
-                              option(value=category.title)=category.title
-                  .field
-                    label.label Short Body:
-                    .control
-                      input.input(type='text', name='shortBody', required)
-                  .field 
-                    label.label Body:
-                    .control
-                      textarea.textarea(name='body')
-                  .field
-                    .file.has-name.is-dark
-                      label.file-label
-                        input.file-input(type='file', name='mainImage', required)
-                        span.file-cta
-                          span.file-icon
-                            i.fa.fa-upload
-                          span.file-label Choose a file...
-                        span.file-name
-                  .field
-                    label.label Author:
-                      .control
-                      .select
-                        select(name='author')
-                          option(value='Predrag Stošić') Predrag Stošić
-                  .field.is-grouped
-                    .control
-                      button.button.is-primary Submit
-                    .control
-                      button.button.is-link Reset
+extends adminlayout
 
+block content
+  section.section
+    .tabs.is-centered.is-toggle
+      ul
+        li#add-tab.is-active
+          a(onClick="switchToAdd()") Add post
+        li#all-tab
+          a(onClick="switchToAll()") All posts
+  .conatiner
+    #all-tab-content.hidden
+      .columns
+        .column.is-10.is-offset-1
+          table.table.is-fullwidth.is-bordered
+            thead
+              th Post Title
+              th Category
+              th Author
+              th Date
+              th Action
+            tbody
+              if posts
+                each post, i in posts
+                  tr
+                    td
+                      a(href='../blog/post/' + post._id)=post.title
+                    td=post.category
+                    td=post.author
+                    td=moment(post.date).format('DD-MM-YYYY')  
+                    td
+                      .field.is-grouped
+                        .control
+                          a(href='/admin/posts/' + post._id + '/delete').button.is-danger Delete
+                        .control
+                          a(href='/posts/' + post._id + '/edit').button.is-warning Edit                  
+    #add-tab-content
+      .columns
+        .column.is-half.is-offset-one-quarter
+          form(method='post', action='./posts', enctype='multipart/form-data')
+            .field
+              label.label Title:
+              .control
+                input.input(type='text', name='title', required)
+            .field
+              label.label Category:
+              .control
+                .select
+                  select(name='category')
+                    if categories
+                      each category, i in categories
+                        option(value=category.title)=category.title
+            .field
+              label.label Short Body:
+              .control
+                textarea.textarea(name='shortBody', rows='2', required)
+            .field 
+              label.label Body:
+              .control
+                textarea.textarea(name='body', rows='5', required)
+            .field
+              .file.has-name.is-dark
+                label.file-label
+                  input.file-input(type='file', name='mainImage', required)
+                  span.file-cta
+                    span.file-icon
+                      i.fa.fa-upload
+                    span.file-label Choose a file...
+                  span.file-name
+            .field
+              label.label Author:
+                .control
+                .select
+                  select(name='author')
+                    option(value='Predrag Stošić') Predrag Stošić
+            .field.is-grouped
+              .control
+                button.button.is-success Submit
+              .control
+                button.button.is-link Reset
 
-    script(src='../javascripts/jquery-3.2.1.slim.min.js')
-    script.
-      function switchToAll() {
-        removeActive();
-        hideAll();
-        $("#all-tab").addClass("is-active");
-        $("#all-tab-content").removeClass("hidden");
-      }
-      function switchToAdd() {
-        removeActive();
-        hideAll();
-        $("#add-tab").addClass("is-active");
-        $("#add-tab-content").removeClass("hidden");
-      }
-      function removeActive() {
-        $("li").each(function() {
-          $(this).removeClass("is-active");
-        });
-      }
-      function hideAll(){
-        $("#all-tab-content").addClass("hidden");
-        $("#add-tab-content").addClass("hidden");
-      }
-      
-      $('input[type=file]').change(function(e){
-        $(this).parents('.file-label').find('.file-name').text(e.target.files[0].name);
+  script(src='../javascripts/jquery-3.2.1.slim.min.js')
+  script.
+    function switchToAll() {
+      removeActive();
+      hideAll();
+      $("#all-tab").addClass("is-active");
+      $("#all-tab-content").removeClass("hidden");
+    }
+    function switchToAdd() {
+      removeActive();
+      hideAll();
+      $("#add-tab").addClass("is-active");
+      $("#add-tab-content").removeClass("hidden");
+    }
+    function removeActive() {
+      $("li").each(function() {
+        $(this).removeClass("is-active");
       });
+    }
+    function hideAll(){
+      $("#all-tab-content").addClass("hidden");
+      $("#add-tab-content").addClass("hidden");
+    }
+    
+    $('input[type=file]').change(function(e){
+      $(this).parents('.file-label').find('.file-name').text(e.target.files[0].name);
+    });
     
 
           

@@ -37,6 +37,7 @@ router.get('/', function(req, res, next) {
 	
 });
 
+// add post to database
 router.post('/', upload.single('mainImage'), function(req, res, next) {
 	// get form values
 	var title     = req.body.title;
@@ -74,5 +75,22 @@ router.post('/', upload.single('mainImage'), function(req, res, next) {
 	});
 });
 
+// display single post page
+router.get('/:id/edit', function(req, res, next) {
+	var posts = db.get('posts');
+	var id = req.params.id;
+	posts.findOne({_id: id}, function(err, post) {
+		res.render('/admin/' + id + '/edit');
+	})
+});
+
+// remove post from database
+router.get('/:id/delete', function(req, res, next) {
+	var posts = db.get('posts');
+	var id = req.params.id;
+	posts.remove({_id: id}, function(err) {
+		res.redirect('/admin/posts');
+	});
+});
 
 module.exports = router;

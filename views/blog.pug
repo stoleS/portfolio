@@ -26,11 +26,11 @@ block content
 													figure.image.is-48x48.profile
 												div.media-content
 													p.title.is-4
-														a(href='/post/show/' + rowPost._id)=rowPost.title
+														a(href='blog/post/' + rowPost._id)=rowPost.title
 													p.subtitle.is-6=rowPost.author
 											div.content=rowPost.shortBody
 												br
-												a(href='/post/show/' + rowPost._id) Read more
+												a(href='blog/post/' + rowPost._id) Read more
 												br
 												small=moment(rowPost.date).format('DD:MM:YYYY')
 
