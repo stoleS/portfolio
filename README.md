@@ -1,5 +1,5 @@
 # Portfolio in node.js
-======================
+===
 
 This is portfolio website featuring personal blog with backend written in node.js, using express and mongoDB as database. It contains some cms features like (more will be added soon): 
 
@@ -17,3 +17,15 @@ This is portfolio website featuring personal blog with backend written in node.j
 #### Landing Page:
 
 <img src="public/images/github/image1.png" alt="landing">
+
+===
+
+#### Admin index 
+
+<img src="public/images/github/image2.png" alt="landing">
+
+===
+
+#### Add post page 
+
+<img src="public/images/github/image3.png" alt="landing">
