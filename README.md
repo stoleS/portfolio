@@ -15,6 +15,8 @@ This is portfolio website featuring personal blog with backend written in node.j
 
 ### Landing Page:
 
+---
+
 <img src="public/images/github/image1.png" alt="landing">
 
 ---
