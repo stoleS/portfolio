@@ -14,17 +14,17 @@ This is portfolio website featuring personal blog with backend written in node.j
 
 ## Some screenshots:
 
-#### Landing Page:
+### Landing Page:
 
 <img src="public/images/github/image1.png" alt="landing">
 
-===
+---
 
-#### Admin index 
+### Admin index 
 
 <img src="public/images/github/image2.png" alt="landing">
 
-===
+---
 
 #### Add post page 
 
