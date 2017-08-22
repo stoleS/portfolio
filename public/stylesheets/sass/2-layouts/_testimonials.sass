@@ -1,14 +1,22 @@
 .testimonials-section
+	
+	.box 
+		box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0,0,0,0.15)
+		border-radius: 0 !important
+
 	h1
 		@include liness()
-	
-	background: #F3F3F3
-	
+
+		span
+			font-size: 2.5em !important
+			line-height: 0rem
+
+			&:after
+				content: "T"
+				color: $main-color
+		
 	.testimonial
 		font-style: italic
-
-	.box 
-		background: #F9F9F9
 		
 	p 
 		margin-bottom: 50px !important

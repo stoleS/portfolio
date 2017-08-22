@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* ==============================
  * PLUGINS & THIRD PARTY STYLES
  * ============================== */
@@ -61,7 +60,7 @@
   min-height: 52px; }
   .has-ribbon-left .ribbon {
     right: auto;
-    left: 0; }
+    left: -10px; }
 
 .has-ribbon-bottom .ribbon {
   position: relative;
@@ -81,6 +80,7 @@
   color: #fff;
   font-weight: 600;
   z-index: 2;
+  box-shadow: 8px 9px 0px #e8ede8;
   background-color: #00d1b2; }
   .ribbon::before {
     position: absolute;
@@ -92,45 +92,59 @@
 /* ==============================
  * BASE STYLES
  * ============================== */
-body {
-  background: #f5f7fa; }
+html, body {
+  background-image: url(../../images/white_brick_wall.png);
+  background-repeat: repeat; }
 
 h1, h2 {
-  font-family: "Josefin Sans", sans-serif; }
+  font-family: "Encode Sans", sans-serif !important; }
 
 p {
-  font-family: "Domine", serif; }
+  font-family: "Roboto", sans-serif !important; }
+
+button {
+  box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0 !important; }
 
 /* ==============================
  * LAYOUT STYLES
  * ============================== */
 /* LANDING STYLES */
 .navbar {
-  background-color: transparent !important; }
+  height: 70px; }
   .navbar a {
-    font-family: "Josefin Sans", sans-serif; }
+    font-family: "Encode Sans", sans-serif;
+    font-weight: 300; }
   .navbar .twitter:hover {
     color: #55acee; }
 
 .landing {
-  background-image: url(../../images/landing.jpg);
-  background-size: cover;
+  background-image: url(../../images/landing.jpg) !important;
+  background-size: cover !important;
   margin-top: -52px;
-  box-shadow: 0px 2px 5px 0px rgba(150, 150, 150, 0.4);
   margin-bottom: 48px; }
   .landing h1 {
-    font-family: "Josefin Sans", sans-serif;
-    text-transform: uppercase; }
+    font-family: "Encode Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400; }
   .landing p {
-    font-family: "Domine", serif; }
+    font-family: "Roboto", sans-serif;
+    font-weight: 300; }
+  .landing #hello {
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 5px; }
   .landing .icon-down {
     position: relative;
     bottom: 0;
     text-align: center; }
 
+.layout-box {
+  background: white;
+  margin: 50px 50px 62px 50px;
+  box-shadow: 15px 12px 0px rgba(0, 0, 0, 0.15); }
+
 /* ABOUT STYLES */
-.about-section .about-text {
-  margin-bottom: 3rem !important; }
 .about-section h1 {
   text-transform: uppercase;
   text-align: center;
@@ -139,19 +153,37 @@ p {
   justify-content: center;
   text-align: center;
   margin-bottom: 36px !important; }
-  .about-section h1::before, .about-section h1::after {
-    background-color: #ddd;
-    content: " ";
-    flex-grow: 1;
-    height: 1px;
-    position: relative;
-    top: 0.5em; }
-  .about-section h1::before {
-    margin-right: 10px; }
-  .about-section h1::after {
-    margin-left: 10px; }
+  .about-section h1 span {
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); }
+  .about-section h1:before, .about-section h1:after {
+    content: "-"; }
+  .about-section h1 span {
+    font-size: 2.5em !important;
+    line-height: 0rem; }
+    .about-section h1 span:after {
+      content: "A";
+      color: #00d1b2; }
+.about-section #me {
+  line-height: 1.8rem !important; }
 .about-section h2 {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 36px !important; }
+  .about-section h2 span {
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); }
+  .about-section h2:before, .about-section h2:after {
+    content: "-"; }
+  .about-section h2 span {
+    font-size: 2.5em !important;
+    line-height: 0rem; }
+    .about-section h2 span:after {
+      content: "S";
+      color: #00d1b2; }
 .about-section .about-buttons {
   display: flex;
   justify-content: center; }
@@ -159,7 +191,7 @@ p {
     margin-right: 20px; }
   .about-section .about-buttons .button {
     width: 100px;
-    font-family: "Josefin Sans", sans-serif; }
+    font-family: "Encode Sans", sans-serif; }
 .about-section .about-education div {
   margin-bottom: 2rem; }
 .about-section .about-education div:last-child {
@@ -178,6 +210,8 @@ p {
   .about-section .about-jobs .type small {
     font-weight: normal;
     color: #00d1b2; }
+.about-section .about-jobs .media {
+  float: left; }
 @media screen and (max-width: 960px) {
   .about-section .about-jobs h2 {
     text-align: center; }
@@ -192,6 +226,10 @@ p {
 .about-section #me {
   text-align: center;
   line-height: 1.5rem; }
+.about-section .about-skills .subtitle {
+  margin-top: 36px !important;
+  text-align: center;
+  line-height: 1.5rem !important; }
 @media screen and (max-width: 960px) {
   .about-section .about-skills h2 {
     text-align: center;
@@ -260,94 +298,91 @@ p {
   justify-content: center;
   text-align: center;
   margin-bottom: 36px !important; }
-  .portfolio-section h1::before, .portfolio-section h1::after {
-    background-color: #ddd;
-    content: " ";
-    flex-grow: 1;
-    height: 1px;
-    position: relative;
-    top: 0.5em; }
-  .portfolio-section h1::before {
-    margin-right: 10px; }
-  .portfolio-section h1::after {
-    margin-left: 10px; }
+  .portfolio-section h1 span {
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); }
+  .portfolio-section h1:before, .portfolio-section h1:after {
+    content: "-"; }
+  .portfolio-section h1 span {
+    font-size: 2.5em !important;
+    line-height: 0rem; }
+    .portfolio-section h1 span:after {
+      content: "P";
+      color: #00d1b2; }
 .portfolio-section .port-1 {
-  min-height: 250px;
+  min-height: 220px;
   width: 100%;
   height: 100%;
   background-image: url(../../images/portfolio1.jpeg);
   background-size: cover;
   background-position: center center; }
 .portfolio-section .port-2 {
-  min-height: 250px;
+  min-height: 220px;
   width: 100%;
   height: 100%;
   background-image: url(../../images/portfolio2.jpeg);
   background-size: cover;
   background-position: center center; }
 .portfolio-section .port-3 {
-  min-height: 250px;
+  min-height: 220px;
   width: 100%;
   height: 100%;
   background-image: url(../../images/portfolio3.jpeg);
   background-size: cover;
   background-position: center center; }
 .portfolio-section .port-4 {
-  min-height: 250px;
+  min-height: 220px;
   width: 100%;
   height: 100%;
   background-image: url(../../images/portfolio4.jpeg);
   background-size: cover;
   background-position: center center; }
 .portfolio-section .port-5 {
-  min-height: 250px;
+  min-height: 220px;
   width: 100%;
   height: 100%;
   background-image: url(../../images/portfolio5.jpeg);
   background-size: cover;
   background-position: center center; }
 .portfolio-section .port-6 {
-  min-height: 250px;
+  min-height: 220px;
   width: 100%;
   height: 100%;
   background-image: url(../../images/portfolio6.jpeg);
   background-size: cover;
   background-position: center center; }
 
-.testimonials-section {
-  background: #F3F3F3; }
-  .testimonials-section h1 {
-    text-transform: uppercase;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 36px !important; }
-    .testimonials-section h1::before, .testimonials-section h1::after {
-      background-color: #ddd;
-      content: " ";
-      flex-grow: 1;
-      height: 1px;
-      position: relative;
-      top: 0.5em; }
-    .testimonials-section h1::before {
-      margin-right: 10px; }
-    .testimonials-section h1::after {
-      margin-left: 10px; }
-  .testimonials-section .testimonial {
-    font-style: italic; }
-  .testimonials-section .box {
-    background: #F9F9F9; }
-  .testimonials-section p {
-    margin-bottom: 50px !important; }
-  .testimonials-section figure {
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 50px 0;
-    background-image: url(../../images/profile.jpeg);
-    background-size: cover;
-    background-position: center center; }
+.testimonials-section .box {
+  box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 0 !important; }
+.testimonials-section h1 {
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 36px !important; }
+  .testimonials-section h1 span {
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); }
+  .testimonials-section h1:before, .testimonials-section h1:after {
+    content: "-"; }
+  .testimonials-section h1 span {
+    font-size: 2.5em !important;
+    line-height: 0rem; }
+    .testimonials-section h1 span:after {
+      content: "T";
+      color: #00d1b2; }
+.testimonials-section .testimonial {
+  font-style: italic; }
+.testimonials-section p {
+  margin-bottom: 50px !important; }
+.testimonials-section figure {
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 50px 0;
+  background-image: url(../../images/profile.jpeg);
+  background-size: cover;
+  background-position: center center; }
 
 /* BLOG STYLES */
 .blog-section h1 {
@@ -358,17 +393,18 @@ p {
   justify-content: center;
   text-align: center;
   margin-bottom: 36px !important; }
-  .blog-section h1::before, .blog-section h1::after {
-    background-color: #ddd;
-    content: " ";
-    flex-grow: 1;
-    height: 1px;
-    position: relative;
-    top: 0.5em; }
-  .blog-section h1::before {
-    margin-right: 10px; }
-  .blog-section h1::after {
-    margin-left: 10px; }
+  .blog-section h1 span {
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); }
+  .blog-section h1:before, .blog-section h1:after {
+    content: "-"; }
+  .blog-section h1 span {
+    font-size: 2.5em !important;
+    line-height: 0rem; }
+    .blog-section h1 span:after {
+      content: "L";
+      color: #00d1b2; }
+.blog-section .card {
+  box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0, 0, 0, 0.15); }
 .blog-section .post-1 {
   background-image: url(../../images/blog1.jpg);
   background-size: cover;
@@ -397,25 +433,39 @@ p {
   margin-bottom: 0 !important; }
 
 .footer-section {
-  background: #333 !important; }
+  background: #fff !important; }
   .footer-section h1 {
-    color: #F9F9F9 !important;
     text-transform: uppercase;
-    margin-bottom: 10px !important; }
-  .footer-section p {
-    color: #F9F9F9; }
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 36px !important;
+    margin-bottom: 10px !important;
+    font-weight: 600 !important; }
+    .footer-section h1 span {
+      text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); }
+    .footer-section h1:before, .footer-section h1:after {
+      content: "-"; }
+    .footer-section h1 span {
+      font-size: 2.5em !important;
+      line-height: 0rem; }
+      .footer-section h1 span:after {
+        content: "G";
+        color: #00d1b2; }
   .footer-section .field {
-    margin: 0 !important;
+    margin-bottom: 20px !important; }
+  .footer-section .input {
+    box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0, 0, 0, 0.15);
     border-radius: 0 !important; }
-    .footer-section .field .input, .footer-section .field textarea {
-      background: #555 !important;
-      border-radius: 0;
-      border: none; }
+  .footer-section textarea {
+    box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 0 !important; }
 
 .footer-text p {
-  background: #222;
   padding: 20px 0;
-  color: #F9F9F9; }
+  background: #FFF; }
   .footer-text p span {
     color: #00d1b2; }
 
@@ -428,7 +478,7 @@ p {
   box-shadow: 0px 2px 5px 0px rgba(150, 150, 150, 0.4);
   margin-bottom: 48px; }
   .blog-landing h1 {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Encode Sans", sans-serif;
     text-transform: uppercase; }
 
 /* ADMIN PAGE STYLES */

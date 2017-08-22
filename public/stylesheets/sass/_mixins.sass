@@ -8,16 +8,8 @@
 	text-align: center 
 	margin-bottom: 36px !important
 
-	&::before, &::after
-		background-color: #ddd
-		content: '\a0'
-		flex-grow: 1
-		height: 1px
-		position: relative
-		top: 0.5em
+	span 
+		text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15)
 
-	&::before
-		margin-right: 10px
-
-	&::after
-		margin-left: 10px
+	&:before, &:after
+		content: "-"

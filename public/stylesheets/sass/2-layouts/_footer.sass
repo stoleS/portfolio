@@ -6,30 +6,36 @@
 	margin-bottom: 0 !important
 
 .footer-section
-	background: #333 !important
+	background: #fff !important
 
 	h1
-		color: #F9F9F9 !important
-		text-transform: uppercase
+		@include liness
 		margin-bottom: 10px !important
+		font-weight: 600 !important
 
-	p 
-		color: #F9F9F9
+		span
+			font-size: 2.5em !important
+			line-height: 0rem
 
-	.field
-		margin: 0 !important
+			&:after
+				content: "G"
+				color: $main-color
+
+	.field 
+		margin-bottom: 20px !important
+
+	.input
+		box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0,0,0,0.15)
 		border-radius: 0 !important
 
-		.input, textarea
-			background: #555 !important
-			border-radius: 0
-			border: none
+	textarea
+		box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0,0,0,0.15)
+		border-radius: 0 !important
 
 .footer-text
 	p 
-		background: #222
 		padding: 20px 0
-		color: #F9F9F9
+		background: #FFF
 
 		span 
 			color: #00d1b2

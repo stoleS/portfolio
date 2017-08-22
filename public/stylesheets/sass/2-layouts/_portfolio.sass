@@ -4,9 +4,17 @@
 	h1
 		@include liness()
 
+		span
+			font-size: 2.5em !important
+			line-height: 0rem
+
+			&:after
+				content: "P"
+				color: $main-color
+
 	@for $i from 1 through 6
 		.port-#{$i}
-			min-height: 250px
+			min-height: 220px
 			width: 100%
 			height: 100%
 			background:

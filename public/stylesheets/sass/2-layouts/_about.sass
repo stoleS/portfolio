@@ -2,13 +2,32 @@
 
 .about-section
 	.about-text
-		margin-bottom: 3rem !important
 
 	h1
 		@include liness()
 
+		span
+			font-size: 2.5em !important
+			line-height: 0rem
+
+			&:after
+				content: "A"
+				color: $main-color
+
+	#me 
+		line-height: 1.8rem !important
+
 	h2
 		text-transform: uppercase
+		@include liness()
+
+		span
+			font-size: 2.5em !important
+			line-height: 0rem
+
+			&:after
+				content: "S"
+				color: $main-color
 
 	.about-buttons
 		display: flex
@@ -50,6 +69,9 @@
 				font-weight: normal
 				color: #00d1b2
 
+		.media 
+			float: left
+
 		@media screen and (max-width: 960px)
 			h2
 				text-align: center
@@ -71,6 +93,11 @@
 
 	// SKILLS
 	.about-skills
+	
+		.subtitle
+			margin-top: 36px !important
+			text-align: center
+			line-height: 1.5rem !important
 
 		@media screen and (max-width: 960px)
 			h2
