@@ -21,14 +21,6 @@ This is portfolio website featuring personal blog with backend written in node.j
 
 ---
 
-### Admin index 
-
----
-
-<img src="public/images/github/image2.png" alt="landing">
-
----
-
 ### Add post page 
 
 ---
