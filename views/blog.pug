@@ -1,13 +1,14 @@
 extends layout
 
 block content
-	section.hero.blog-landing.has-text-centered.is-medium
+	section.hero.blog-landing.has-text-centered
 		div.hero-body
 			div.container
 				div.columns
 					div.column.is-4.is-offset-4
-						h1.title.is-size-1 Blog
-						p.subtitle Personal ocean of posts
+						.title-column
+							h1.title.is-size-1 #[span]log
+							p.subtitle Personal ocean of posts
 	section.section.blog-section
 		div.container
 			if posts

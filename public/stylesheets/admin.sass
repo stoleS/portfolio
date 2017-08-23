@@ -1,28 +1,29 @@
 /* ADMIN PAGE STYLES */
+$main-color: #00d1b2
 
-.admin-panel
-  padding-right: 0 !important
-  min-height: calc(100% - 52px)
+html
+  padding-left: 12px 
+  padding-right: 12px
 
+#top 
+  position: fixed
+  width: 100%
+  background: #25283D
+  left: 0px
 
-.nav.is-dark
-  background-color: #232B2D
-  color: #F6F7F7
-  .nav-item a, a.nav-item
-    color: #F6F7F7
-  .nav-item a.button.is-default
-    color: #F6F7F7
-    background-color: transparent
-    border-width: 2px
+  a 
+    color: white
 
 .aside
-  background-color: #354052
-  margin-right: -10px
-  margin-top: 12px
+  background-color: #EEE
+  padding-right: 0
+  padding-left: 0 !important
+  position: fixed
+  height: 100%
   .main
-    padding: 40px
     color: #6F7B7E
-    position: fixed
+    width: 100%
+    position: relative
     @media screen and (max-width: 1025px)
       padding: 10px
   .title
@@ -32,22 +33,25 @@
     text-transform: uppercase
   .main
     .item
-      display: block
-      padding: 10px 0
+      display: flex
+      width: 100%
+      padding: 10px 0 10px 24px
       color: #6F7B7E
       &.active
-        color: #F6F7F7
+        background-color: $main-color
+        color: white
     .icon
       font-size: 19px
-      padding-right: 30px
+      margin-right: 12px
       @media screen and (max-width: 1150px)
         display: none
     .name
       font-size: 16px
       font-weight: bold
 
-.title-admin
-  color: #4a4a4a
+.main-content
+  margin-top: 52px
+
 
 /* ADMIN/POST STYLES */
 

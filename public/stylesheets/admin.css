@@ -1,0 +1,60 @@
+/* ADMIN PAGE STYLES */
+html {
+  padding-left: 12px;
+  padding-right: 12px; }
+
+#top {
+  position: fixed;
+  width: 100%;
+  background: #25283D;
+  left: 0px; }
+  #top a {
+    color: white; }
+
+.aside {
+  background-color: #EEE;
+  padding-right: 0;
+  padding-left: 0 !important;
+  position: fixed;
+  height: 100%; }
+  .aside .main {
+    color: #6F7B7E;
+    width: 100%;
+    position: relative; }
+    @media screen and (max-width: 1025px) {
+      .aside .main {
+        padding: 10px; } }
+  .aside .title {
+    color: #6F7B7E;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .aside .main .item {
+    display: flex;
+    width: 100%;
+    padding: 10px 0 10px 24px;
+    color: #6F7B7E; }
+    .aside .main .item.active {
+      background-color: #00d1b2;
+      color: white; }
+  .aside .main .icon {
+    font-size: 19px;
+    margin-right: 12px; }
+    @media screen and (max-width: 1150px) {
+      .aside .main .icon {
+        display: none; } }
+  .aside .main .name {
+    font-size: 16px;
+    font-weight: bold; }
+
+.main-content {
+  margin-top: 52px; }
+
+/* ADMIN/POST STYLES */
+.hidden {
+  display: none; }
+
+form {
+  margin-bottom: 48px; }
+
+/*# sourceMappingURL=admin.css.map */

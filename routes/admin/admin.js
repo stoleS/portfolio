@@ -5,7 +5,7 @@ var db = require('monk')('localhost/myblog');
 
 router.get('/', function(req, res, next) {
 	res.render('admin/admin', {
-		'title': 'This is admin page'
+		'title': 'Admin'
 	});
 });
 

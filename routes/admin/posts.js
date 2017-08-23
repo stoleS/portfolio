@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 			categories.find({}, {}, function(err, categories) {
 				locals.categories = categories;
 				callback();
-			})
+			});
 		}
 	];
 
@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
 		if(err) return next(err);
 		db.close();
 		res.render('admin/addpost', locals);
-	})
+	});
 	
 });
 
@@ -75,13 +75,34 @@ router.post('/', upload.single('mainImage'), function(req, res, next) {
 	});
 });
 
-// display single post page
-router.get('/:id/edit', function(req, res, next) {
+// edit post
+router.get('/:id/editpost', function(req, res, next) {
 	var posts = db.get('posts');
+	var categories = db.get('categories');
 	var id = req.params.id;
-	posts.findOne({_id: id}, function(err, post) {
-		res.render('/admin/' + id + '/edit');
-	})
+	var data = {}
+	// find post
+	var find = [
+		function(callback) {
+			posts.findOne({_id: id}, function(err, post) {
+				data.post = post;
+				callback();
+			});
+		},
+
+		function(callback) {
+			categories.find({}, {}, function(err, categories) {
+				data.categories = categories;
+				callback();
+			});
+		}
+	];
+
+	async.parallel(find, function(err) {
+		if(err) return next(err);
+		db.close();
+		res.render('admin/editpost', data);
+	});
 });
 
 // remove post from database

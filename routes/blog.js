@@ -7,7 +7,6 @@ router.get('/post/:id', function(req, res, next) {
 	var posts = db.get('posts');
 	var id = req.params.id;
 	posts.findOne({_id: id}, function(err, post) {
-		console.log(id);
 		res.render('show', {
 			'post': post
 		});

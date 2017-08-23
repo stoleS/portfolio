@@ -4,27 +4,35 @@ html
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Admin - Free Bulma template
+    title=title
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/stylesheets/css/app.css')
     link(rel='stylesheet', href='/stylesheets/bulma.css')
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/admin.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Domine:400,700')
-    style.
-      .box {
-        padding: 25px;
-      }
   body
-    .columns
-      aside.column.is-2.aside.hero.is-fullheight.is-hidden-mobile
-        div
+    .nav#top
+      .nav-left
+        a.nav-item(href='/admin') Dashboard
+      .nav-center
+        a.nav-item
+          span.icon
+            i.fa.fa-github
+        a.nav-item
+          span.icon
+            i.fa.fa-twitter
+      span.nav-toggle
+        span
+        span
+        span
+      .nav-right.nav-menu
+        a.nav-item(href='/') Home
+        a.nav-item(href='/') Sign out
+    .hero.is-fullheight
+      .columns.main-content
+        .column.is-2.aside.is-hidden-mobile
           .main
-            .title 
-              a(href='/')
-                p Main page
-            .title 
-              a(href='/admin')
-                p Dashboard
-            a.item(href='/admin/posts')
+            a.item(href='/admin/posts').active
               span.icon
                 i.fa.fa-clipboard
               span.name Posts
@@ -48,22 +56,6 @@ html
               span.icon
                 i.fa.fa-sign-out
               span.name Sign out
-      .column.is-10.admin-panel
-        nav#top.nav.has-shadow
-          .container
-            .nav-left
-              h1.title.is-4.nav-item Welcome Predrag
-            span.nav-toggle
-              span
-              span
-              span
-            .nav-right.nav-menu.is-hidden-tablet
-              a.nav-item.is-active(href='#')
-                | Posts/Add posts
-              a.nav-item(href='#')
-                | Activity
-              a.nav-item(href='#')
-                | Timeline
-              a.nav-item(href='#')
-                | Folders
-        block content
+        .column.is-10.is-offset-2
+          
+          block content
