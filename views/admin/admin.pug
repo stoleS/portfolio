@@ -2,48 +2,43 @@ extends adminlayout
 
 block content
         section.section
-          .columns
-            .column.is-one-third.is-offset-2
-              .box.has-text-centered
-                p
-                  span.icon.is-large
-                    i.fa.fa-clipboard
-                a.is-size-3(href='admin/posts')
-                  span.title-admin Posts
-            .column.is-one-third
-              .box.has-text-centered
-                p
-                  span.icon.is-large
-                    i.fa.fa-th-list
-                a.is-size-3 
-                  span.title-admin Categories
-          .columns
-            .column.is-one-third.is-offset-2
-              .box.has-text-centered
-                p
-                  span.icon.is-large
-                    i.fa.fa-picture-o 
-                a.is-size-3 
-                  span.title-admin Projects
-            .column.is-one-third
-              .box.has-text-centered
-                p
-                  span.icon.is-large
-                    i.fa.fa-quote-right
-                a.is-size-3 
-                  span.title-admin Testimonials
-          .columns
-            .column.is-one-third.is-offset-2
-              .box.has-text-centered
-                p
-                  span.icon.is-large
-                    i.fa.fa-comments
-                a.is-size-3 
-                  span.title-admin Messages
-            .column.is-one-third
-              .box.has-text-centered
-                p
-                  span.icon.is-large
-                    i.fa.fa-sign-out
-                a.is-size-3 
-                  span.title-admin Sign out
+          .tile.is-ancestor
+            .tile.is-parent
+              article.tile.is-child.box
+                p.title One
+                p.subtitle Create new post
+            .tile.is-parent
+              article.tile.is-child.box
+                p.title Two
+                p.subtitle Manage posts
+            .tile.is-parent
+              article.tile.is-child.box
+                p.title Three
+                p.subtitle Manage projects
+          .tile.is-ancestor
+            .tile.is-vertical
+              .tile
+                .tile.is-parent
+                  article.tile.is-child.box
+                    p.title Five
+                    p.subtitle Latest message
+                    .content
+                      p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.
+                .tile.is-8.is-vertical
+                  .tile
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        p.title Six
+                        p.subtitle Menage testimonials
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        p.title Seven
+                        p.subtitle Users
+                  .tile.is-parent
+                    article.tile.is-child.box
+                      p.title Eight
+                      p.subtitle Latest comment
+                      .content
+                        p
+                          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.

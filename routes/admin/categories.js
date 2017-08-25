@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 			res.send('There was a problem loading categories');
 		} else {
 			res.render('admin/addcategories', {
+				'title': 'Categories',
 				'categories': categories
 			});
 		}

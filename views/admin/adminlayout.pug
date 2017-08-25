@@ -32,11 +32,11 @@ html
       .columns.main-content
         .column.is-2.aside.is-hidden-mobile
           .main
-            a.item(href='/admin/posts').active
+            a.item(href='/admin/posts' class=(title === 'Posts' ? 'active' : ''))
               span.icon
                 i.fa.fa-clipboard
               span.name Posts
-            a.item(href='/admin/categories')
+            a.item(href='/admin/categories' class=(title === 'Categories' ? 'active' : ''))
               span.icon
                 i.fa.fa-th-list
               span.name Categories

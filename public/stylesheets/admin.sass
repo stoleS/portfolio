@@ -40,6 +40,15 @@ html
       &.active
         background-color: $main-color
         color: white
+        &:hover 
+          background-color: $main-color
+          color: white
+      &:hover
+        background-color: white
+        transition: background-color 0.2s ease-in-out
+        .icon
+          color: $main-color
+          transition: color 0.2s ease-in-out
     .icon
       font-size: 19px
       margin-right: 12px
@@ -47,11 +56,12 @@ html
         display: none
     .name
       font-size: 16px
-      font-weight: bold
 
 .main-content
   margin-top: 52px
 
+.box 
+  border-radius: 0
 
 /* ADMIN/POST STYLES */
 

@@ -29,6 +29,8 @@ router.get('/', function(req, res, next) {
 		}
 	];
 
+	locals.title = 'Posts';
+
 	async.parallel(tasks, function(err) {
 		if(err) return next(err);
 		db.close();

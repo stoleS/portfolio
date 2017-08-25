@@ -37,6 +37,15 @@ html {
     .aside .main .item.active {
       background-color: #00d1b2;
       color: white; }
+      .aside .main .item.active:hover {
+        background-color: #00d1b2;
+        color: white; }
+    .aside .main .item:hover {
+      background-color: white;
+      transition: background-color 0.2s ease-in-out; }
+      .aside .main .item:hover .icon {
+        color: #00d1b2;
+        transition: color 0.2s ease-in-out; }
   .aside .main .icon {
     font-size: 19px;
     margin-right: 12px; }
@@ -44,11 +53,13 @@ html {
       .aside .main .icon {
         display: none; } }
   .aside .main .name {
-    font-size: 16px;
-    font-weight: bold; }
+    font-size: 16px; }
 
 .main-content {
   margin-top: 52px; }
+
+.box {
+  border-radius: 0; }
 
 /* ADMIN/POST STYLES */
 .hidden {
