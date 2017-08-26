@@ -5,6 +5,7 @@ var multer = require('multer');
 var upload = multer({ dest: './public/images/uploads' })
 var mongo = require('mongodb');
 var db = require('monk')('localhost/myblog');
+var fs = require('fs');
 
 router.get('/', function(req, res, next) {
 	var db = req.db;
@@ -107,11 +108,49 @@ router.get('/:id/editpost', function(req, res, next) {
 	});
 });
 
+router.post('/:id/editpost', function(req, res, next) {
+	var title     = req.body.title;
+	var category  = req.body.category;
+	var shortBody = req.body.shortBody;
+	var body      = req.body.body;
+	var author    = req.body.author;
+	var id        = req.params.id;
+
+	var posts = db.get('posts');
+
+	posts.findOneAndUpdate({_id: id}, { 
+			$set: {
+			title: title, 
+			category: category,
+			shortBody: shortBody,
+			body: body,
+			author: author }
+		},
+		function(err, post) {
+			if(err) {throw err;}
+			else{
+				console.log('Updated');
+				res.redirect('/admin/posts')
+			}
+	});
+});
+
 // remove post from database
+// this is bad solution for production
+// but good enough for prototyping
 router.get('/:id/delete', function(req, res, next) {
 	var posts = db.get('posts');
 	var id = req.params.id;
-	posts.remove({_id: id}, function(err) {
+	// find post and remove image from uploads folder
+	posts.findOne({_id: id}, function(err, post) {
+		var image = post.mainImage
+		console.log(image);
+		fs.unlink('./public/images/uploads/' + image, function(err) {
+			if(err) throw err;
+		});
+	})
+	// remove post from database
+	posts.remove({_id: id}, function(err, post) {
 		res.redirect('/admin/posts');
 	});
 });

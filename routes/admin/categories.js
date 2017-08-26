@@ -18,12 +18,10 @@ router.get('/', function(req, res, next) {
 	});
 });
 	
-
+// add category to database
 router.post('/', function(req, res, next) {
 	// get form values
 	var categoryName = req.body.categoryName;
-	console.log(categoryName);
-
 	var categories = db.get('categories');
 
 	// submit to db
@@ -38,5 +36,14 @@ router.post('/', function(req, res, next) {
 		}
 	}); 
 });
+
+// remove category from database
+router.get('/:id/delete', function(req, res, next) {
+	var categories = db.get('categories');
+	var id = req.params.id;
+	categories.remove({_id: id}, function(err) {
+		res.redirect('/admin/categories');
+	})
+})
 
 module.exports = router;

@@ -3,7 +3,7 @@ extends adminlayout
 block content
 	.columns
 		.column.is-half.is-offset-one-quarter
-			form(method='post', action='./posts', enctype='multipart/form-data')
+			form(method='post', action='./editpost', enctype='application/x-www-form-urlencoded')
 				.field
 					label.label Title:
 					.control
@@ -15,7 +15,7 @@ block content
 							select(name='category')
 								if categories
 									each category, i in categories
-										option(value=category.title)=category.title
+										option(value=category.title selected= category.title == post.category)=category.title
 				.field
 					label.label Short Body:
 					.control
@@ -24,15 +24,6 @@ block content
 					label.label Body:
 					.control
 						textarea.textarea(name='body', rows='5', required)=post.body
-				.field
-					.file.has-name.is-dark
-						label.file-label
-							input.file-input(type='file', name='mainImage', required)
-							span.file-cta
-								span.file-icon
-									i.fa.fa-upload
-								span.file-label Choose a file...
-							span.file-name
 				.field
 					label.label Author:
 						.control

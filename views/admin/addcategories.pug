@@ -12,11 +12,16 @@ block content
 				table.table.is-fullwidth.is-bordered
 					thead
 						th.has-text-centered Category title
+						th.has-text-centered Action
 					tbody
 						if categories
 							each category, i in categories
 								tr
 									td.has-text-centered=category.title
+									td
+										.field.is-grouped
+											.control
+												a(href='/admin/categories/' + category._id + '/delete').button.is-danger Delete
 	section.section
 		.tabs.is-centered.is-toggle
 			ul
@@ -33,4 +38,4 @@ block content
 							.control
 								button.button.is-success Submit
 							.control
-								button.button.is-link Reset
+								input.button(type='reset')

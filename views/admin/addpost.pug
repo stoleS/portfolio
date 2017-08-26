@@ -4,12 +4,12 @@ block content
   section.section
     .tabs.is-centered.is-toggle
       ul
-        li#add-tab.is-active
-          a(onClick="switchToAdd()") Add post
-        li#all-tab
+        li#all-tab.is-active
           a(onClick="switchToAll()") All posts
+        li#add-tab
+          a(onClick="switchToAdd()") Add post
   .conatiner
-    #all-tab-content.hidden
+    #all-tab-content
       .columns
         .column.is-10.is-offset-1
           table.table.is-fullwidth.is-bordered
@@ -34,7 +34,7 @@ block content
                           a(href='/admin/posts/' + post._id + '/delete').button.is-danger Delete
                         .control
                           a(href='/admin/posts/' + post._id + '/editpost').button.is-warning Edit                  
-    #add-tab-content
+    #add-tab-content.hidden
       .columns
         .column.is-half.is-offset-one-quarter
           form(method='post', action='./posts', enctype='multipart/form-data')
