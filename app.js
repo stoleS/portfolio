@@ -18,6 +18,7 @@ var blog = require('./routes/blog');
 var admin = require('./routes/admin/admin');
 var posts = require('./routes/admin/posts');
 var categories = require('./routes/admin/categories');
+var projects = require('./routes/admin/projects');
 
 var app = express();
 
@@ -79,7 +80,8 @@ app.use('/', index);
 app.use('/blog', blog);
 app.use('/admin', admin);
 app.use('/admin/posts', posts);
-app.use('/admin/categories', categories)
+app.use('/admin/categories', categories);
+app.use('/admin/projects', projects);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
