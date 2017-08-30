@@ -71,4 +71,30 @@ html {
 form {
   margin-bottom: 48px; }
 
+/* ADMIN/PRIJECT STYLES */
+.port-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.port-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.port-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.port-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.port-5 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 /*# sourceMappingURL=admin.css.map */
