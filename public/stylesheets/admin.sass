@@ -1,4 +1,5 @@
 /* ADMIN PAGE STYLES */
+
 $main-color: #00d1b2
 
 html
@@ -81,4 +82,62 @@ form
     display: flex 
     align-items: center
     justify-content: center
+    min-height: 220px
+    width: 100%
+    height: 100%
+    background:
+      image: url(../../images/portfolio/portfolio#{$i}.jpeg)
+      size: cover
+      position: center center
+
+.figure
+  display: inline-block
+
+.modal-box 
+  display: flex 
+  flex-direction: column
+
+  .remove
+    position: absolute 
+    display: inline-block
+    right: 20px
+
+  .is-select 
+    position: relative 
+    top: 50%
+    left: 50%
+    margin-right: -50%
+    transform: translate(-50%, -50%)
+  
+  @for $i from 1 through 5
+    .image-#{$i} 
+      height: 300px
+      margin-bottom: 20px
+      background:
+        image: url(../../images/portfolio/portfolio#{$i}.jpeg)
+        size: cover
+        position: center center
+
+      &:last-child
+        margin-bottom: 0
+
+  .image-6
+    height: 300px
+    border: 1px solid transparent
+    border-color: #dbdbdb
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+
+    i 
+      font-size: 4rem
+      color: #9a9a9a
+    &:hover 
+      background-color: #dbdbdb
+
+      i 
+        color: #4a4a4a
+
+
 

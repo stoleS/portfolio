@@ -20,3 +20,24 @@ block content
 									button.button.is-primary Change	
 								article.tile.is-child.box.port-5
 									button.button.is-primary Change	
+	.modal
+		.modal-background
+		.modal-content
+			.box.modal-box
+				- for (var x = 1; x < 6; x++)
+						div(class='image-' + x)
+							button.button.is-primary.is-select Select
+							button.button.is-danger.remove
+								span.icon.is-small
+									i.fa.fa-times
+				.image-6
+					i.fa.fa-plus-circle
+		button.modal-close.is-large(aria-label='close')
+	script(src='../javascripts/jquery-3.2.1.slim.min.js')
+	script.
+		$('.button').click(function() {
+			$('.modal').addClass("is-active");
+		});
+		$('.modal-close, .modal-background').click(function() {
+			$('.modal').removeClass("is-active");
+		});
