@@ -133,12 +133,19 @@ form {
 .modal-box {
   display: flex;
   flex-direction: column; }
+  .modal-box .project-wrap {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px; }
   .modal-box .remove {
     position: absolute;
-    display: inline-block;
-    right: 20px; }
+    right: 0;
+    top: 0; }
   .modal-box .is-select {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
@@ -183,20 +190,31 @@ form {
     background-position: center center; }
     .modal-box .image-5:last-child {
       margin-bottom: 0; }
-  .modal-box .image-6 {
-    height: 300px;
-    border: 1px solid transparent;
-    border-color: #dbdbdb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .modal-box .upload-image {
+    position: relative;
+    overflow: hidden;
     cursor: pointer; }
-    .modal-box .image-6 i {
-      font-size: 4rem;
-      color: #9a9a9a; }
-    .modal-box .image-6:hover {
-      background-color: #dbdbdb; }
-      .modal-box .image-6:hover i {
-        color: #4a4a4a; }
+  .modal-box form {
+    margin-bottom: 0; }
+    .modal-box form input[type=file] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      cursor: pointer; }
+    .modal-box form .add-button {
+      height: 300px;
+      width: 100%;
+      border: 1px solid transparent;
+      border-color: #dbdbdb;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .modal-box form .add-button i {
+        font-size: 4rem;
+        color: #9a9a9a; }
 
 /*# sourceMappingURL=admin.css.map */

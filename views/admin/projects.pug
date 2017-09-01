@@ -24,16 +24,21 @@ block content
 		.modal-background
 		.modal-content
 			.box.modal-box
-				- for (var x = 1; x < 6; x++)
-						div(class='image-' + x)
+				if projects
+					each project, i in projects
+						div(class='project-wrap image-' + i)
+							img(src='/images/portfolio/uploads/' + project.title)
 							button.button.is-primary.is-select Select
-							button.button.is-danger.remove
+							a.button.is-danger.remove(href='/admin/projects/' + project._id + '/delete')
 								span.icon.is-small
 									i.fa.fa-times
-				.image-6
-					i.fa.fa-plus-circle
+				.upload-image
+					form(method='post', action='./projects', enctype='multipart/form-data')
+						button.add-button
+							span 
+								i.fa.fa-plus-circle
+						input(type='file', accept="image/*", name='projectImage', onchange='form.submit()')
 		button.modal-close.is-large(aria-label='close')
-	script(src='../javascripts/jquery-3.2.1.slim.min.js')
 	script.
 		$('.button').click(function() {
 			$('.modal').addClass("is-active");

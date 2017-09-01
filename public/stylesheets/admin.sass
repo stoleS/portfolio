@@ -97,13 +97,21 @@ form
   display: flex 
   flex-direction: column
 
+  .project-wrap
+    position: relative
+    height: 300px
+    display: flex
+    align-items: center
+    overflow: hidden
+    margin-bottom: 20px
+
   .remove
     position: absolute 
-    display: inline-block
-    right: 20px
+    right: 0
+    top: 0
 
   .is-select 
-    position: relative 
+    position: absolute
     top: 50%
     left: 50%
     margin-right: -50%
@@ -121,23 +129,38 @@ form
       &:last-child
         margin-bottom: 0
 
-  .image-6
-    height: 300px
-    border: 1px solid transparent
-    border-color: #dbdbdb
-    display: flex
-    align-items: center
-    justify-content: center
+  .upload-image
+    position: relative 
+    overflow: hidden
     cursor: pointer
+        
+  form 
+    margin-bottom: 0
 
-    i 
-      font-size: 4rem
-      color: #9a9a9a
-    &:hover 
-      background-color: #dbdbdb
+    input[type=file]
+      position: absolute
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      opacity: 0
+      cursor: pointer
+
+    .add-button
+      height: 300px
+      width: 100%
+      border: 1px solid transparent
+      border-color: #dbdbdb
+      background-color: white
+      display: flex
+      align-items: center
+      justify-content: center
 
       i 
-        color: #4a4a4a
+        font-size: 4rem
+        color: #9a9a9a
+      
+      
 
 
 

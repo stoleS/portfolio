@@ -143,7 +143,7 @@ router.get('/:id/delete', function(req, res, next) {
 	var id = req.params.id;
 	// find post and remove image from uploads folder
 	posts.findOne({_id: id}, function(err, post) {
-		var image = post.mainImage
+		var image = post.mainImage;
 		console.log(image);
 		fs.unlink('./public/images/uploads/' + image, function(err) {
 			if(err) throw err;
