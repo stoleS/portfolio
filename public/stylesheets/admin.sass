@@ -77,18 +77,27 @@ form
 
 /* ADMIN/PROJECT STYLES */
 
-@for $i from 1 through 5
-  .port-#{$i}
-    display: flex 
-    align-items: center
-    justify-content: center
-    min-height: 220px
+.port
+  height: 100%
+  width: 100%
+  min-height: 200px
+  position: relative
+
+  img 
+    border-radius: 5px
     width: 100%
     height: 100%
-    background:
-      image: url(../../images/portfolio/portfolio#{$i}.jpeg)
-      size: cover
-      position: center center
+    min-height: 200px
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
+    object-fit: cover
+  
+  a
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-right: -50%
+    transform: translate(-50%, -50%)
+
 
 .figure
   display: inline-block
@@ -105,17 +114,17 @@ form
     overflow: hidden
     margin-bottom: 20px
 
-  .remove
-    position: absolute 
-    right: 0
-    top: 0
+.remove
+  position: absolute 
+  right: 0
+  top: 0
 
-  .is-select 
-    position: absolute
-    top: 50%
-    left: 50%
-    margin-right: -50%
-    transform: translate(-50%, -50%)
+.is-select 
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-right: -50%
+  transform: translate(-50%, -50%)
   
   @for $i from 1 through 5
     .image-#{$i} 
@@ -129,11 +138,11 @@ form
       &:last-child
         margin-bottom: 0
 
-  .upload-image
-    position: relative 
-    overflow: hidden
-    cursor: pointer
-        
+.upload-image
+  position: relative 
+  overflow: hidden
+  cursor: pointer
+      
   form 
     margin-bottom: 0
 
@@ -155,12 +164,21 @@ form
       display: flex
       align-items: center
       justify-content: center
+      border-radius: 5px
 
       i 
         font-size: 4rem
         color: #9a9a9a
-      
-      
+        
+.project-image
+  height: 300px
+  width: 100%
+  position: relative
 
-
-
+  img 
+    border-radius: 5px
+    width: 100%
+    height: 100%
+    min-height: 200px
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
+    object-fit: cover

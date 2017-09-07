@@ -8,41 +8,20 @@ block content
 					div.tile.is-12.is-vertical
 						div.tile
 							div.tile.is-parent.is-vertical
-								article.tile.is-child.box.port-1
-									button.button.is-primary Change	
-								article.tile.is-child.box.port-2
-									button.button.is-primary Change	
+								article.tile.is-child.port
+									img(src=(projects[0] != undefined ? '/images/portfolio/uploads/' + projects[0] : '/images/portfolio/comingsoon.png'))
+									a.button.is-dark(href='/admin/projects/portfolio1') Change	
+								article.tile.is-child.port
+									img(src=(projects[1] != undefined ? '/images/portfolio/uploads/' + projects[1] : '/images/portfolio/comingsoon.png'))
+									a.button.is-dark(href='/admin/projects/portfolio2') Change	
 							div.tile.is-parent
-								article.tile.is-child.box.port-3
-									button.button.is-primary Change	
+								article.tile.is-child.port
+									img(src=(projects[2] != undefined ? '/images/portfolio/uploads/' + projects[2] : '/images/portfolio/comingsoon.png'))
+									a.button.is-dark(href='/admin/projects/portfolio3') Change	
 							div.tile.is-parent.is-vertical
-								article.tile.is-child.box.port-4
-									button.button.is-primary Change	
-								article.tile.is-child.box.port-5
-									button.button.is-primary Change	
-	.modal
-		.modal-background
-		.modal-content
-			.box.modal-box
-				if projects
-					each project, i in projects
-						div(class='project-wrap image-' + i)
-							img(src='/images/portfolio/uploads/' + project.title)
-							button.button.is-primary.is-select Select
-							a.button.is-danger.remove(href='/admin/projects/' + project._id + '/delete')
-								span.icon.is-small
-									i.fa.fa-times
-				.upload-image
-					form(method='post', action='./projects', enctype='multipart/form-data')
-						button.add-button
-							span 
-								i.fa.fa-plus-circle
-						input(type='file', accept="image/*", name='projectImage', onchange='form.submit()')
-		button.modal-close.is-large(aria-label='close')
-	script.
-		$('.button').click(function() {
-			$('.modal').addClass("is-active");
-		});
-		$('.modal-close, .modal-background').click(function() {
-			$('.modal').removeClass("is-active");
-		});
+								article.tile.is-child.port
+									img(src=(projects[3] != undefined ? '/images/portfolio/uploads/' + projects[3] : '/images/portfolio/comingsoon.png'))
+									a.button.is-dark(href='/admin/projects/portfolio4') Change	
+								article.tile.is-child.port
+									img(src=(projects[4] != undefined ? '/images/portfolio/uploads/' + projects[4] : '/images/portfolio/comingsoon.png'))
+									a.button.is-dark(href='/admin/projects/portfolio5') Change	

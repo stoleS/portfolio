@@ -12,12 +12,15 @@
 				content: "P"
 				color: $main-color
 
-	@for $i from 1 through 6
-		.port-#{$i}
-			min-height: 220px
+	.port
+		height: 100%
+		width: 100%
+		min-height: 200px
+		position: relative
+
+		img 
 			width: 100%
 			height: 100%
-			background:
-				image: url(../../images/portfolio#{$i}.jpeg)
-				size: cover
-				position: center center
+			min-height: 200px
+			box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
+			object-fit: cover

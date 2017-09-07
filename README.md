@@ -4,25 +4,11 @@ This is portfolio website featuring personal blog with backend written in node.j
 
 - Adding, editing and removing posts
 - Adding and removing categories 
-- Editing portfolio section*
+- Editing portfolio section
 - Editing testimonials*
 - Messages*
 - Admin user authentication*
 
 <sub>*this features will be added soon</sub>
 
-## Some screenshots:
-
-### Landing Page:
-
----
-
-<img src="public/images/github/image1.png" alt="landing">
-
----
-
-### Add post page 
-
----
-
-<img src="public/images/github/image3.png" alt="landing">
+## Screenshots wil be added soon

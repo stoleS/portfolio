@@ -83,13 +83,18 @@ block content
 					div.tile.is-12.is-vertical
 						div.tile
 							div.tile.is-parent.is-vertical
-								article.tile.is-child.box.port-1
-								article.tile.is-child.box.port-2
+								article.tile.is-child.port.layout-box
+									img(src=(projects[0] != undefined ? '/images/portfolio/uploads/' + projects[0] : '/images/portfolio/comingsoon.png'))
+								article.tile.is-child.port.layout-box
+									img(src=(projects[1] != undefined ? '/images/portfolio/uploads/' + projects[1] : '/images/portfolio/comingsoon.png'))
 							div.tile.is-parent
-								article.tile.is-child.box.port-3
+								article.tile.is-child.port.layout-box
+									img(src=(projects[2] != undefined ? '/images/portfolio/uploads/' + projects[2] : '/images/portfolio/comingsoon.png'))
 							div.tile.is-parent.is-vertical
-								article.tile.is-child.box.port-4
-								article.tile.is-child.box.port-5
+								article.tile.is-child.port.layout-box
+									img(src=(projects[3] != undefined ? '/images/portfolio/uploads/' + projects[3] : '/images/portfolio/comingsoon.png'))
+								article.tile.is-child.port.layout-box
+									img(src=(projects[4] != undefined ? '/images/portfolio/uploads/' + projects[4] : '/images/portfolio/comingsoon.png'))
 	section.hero.testimonials-section.is-fullheight.layout-box.has-ribbon-left
 		div.ribbon 
 			span.is-medium

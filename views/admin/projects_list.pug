@@ -1,0 +1,37 @@
+extends adminlayout
+
+block content
+	-var flag = true
+	if projects
+		each project, i in projects
+			if i % 4 == 0
+				.columns
+					each rowProject, k in projects.slice(i, i + 4)
+						.column.is-3
+							.project-image
+								img(src='/images/portfolio/uploads/' + rowProject.title)
+								a.button.is-dark.is-select(href='./' + title + '/' + rowProject._id) Select
+								a.button.is-danger.remove(href='/admin/projects/' + rowProject._id + '/delete')
+									span.icon.is-small
+										i.fa.fa-times
+						if k + i == projects.length - 1 && k != 3
+							- flag = false
+							.column.is-3
+								.upload-image
+									form(method='post', action='/admin/projects', enctype='multipart/form-data')
+										button.add-button
+											span 
+												i.fa.fa-plus-circle
+											input(type='file', accept="image/*", name='projectImage', onchange='form.submit()')
+						else 
+							- flag = true
+	if flag
+		- flag = false
+		.columns
+			.column.is-3
+				.upload-image
+					form(method='post', action='/admin/projects', enctype='multipart/form-data')
+						button.add-button
+							span 
+								i.fa.fa-plus-circle
+							input(type='file', accept="image/*", name='projectImage', onchange='form.submit()')

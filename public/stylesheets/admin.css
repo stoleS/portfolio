@@ -72,60 +72,24 @@ form {
   margin-bottom: 48px; }
 
 /* ADMIN/PROJECT STYLES */
-.port-1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  width: 100%;
+.port {
   height: 100%;
-  background-image: url(../../images/portfolio/portfolio1.jpeg);
-  background-size: cover;
-  background-position: center center; }
-
-.port-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
   width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio/portfolio2.jpeg);
-  background-size: cover;
-  background-position: center center; }
-
-.port-3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio/portfolio3.jpeg);
-  background-size: cover;
-  background-position: center center; }
-
-.port-4 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio/portfolio4.jpeg);
-  background-size: cover;
-  background-position: center center; }
-
-.port-5 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio/portfolio5.jpeg);
-  background-size: cover;
-  background-position: center center; }
+  min-height: 200px;
+  position: relative; }
+  .port img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    object-fit: cover; }
+  .port a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); }
 
 .figure {
   display: inline-block; }
@@ -140,63 +104,66 @@ form {
     align-items: center;
     overflow: hidden;
     margin-bottom: 20px; }
-  .modal-box .remove {
-    position: absolute;
-    right: 0;
-    top: 0; }
-  .modal-box .is-select {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%); }
-  .modal-box .image-1 {
+
+.remove {
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.is-select {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); }
+  .is-select .image-1 {
     height: 300px;
     margin-bottom: 20px;
     background-image: url(../../images/portfolio/portfolio1.jpeg);
     background-size: cover;
     background-position: center center; }
-    .modal-box .image-1:last-child {
+    .is-select .image-1:last-child {
       margin-bottom: 0; }
-  .modal-box .image-2 {
+  .is-select .image-2 {
     height: 300px;
     margin-bottom: 20px;
     background-image: url(../../images/portfolio/portfolio2.jpeg);
     background-size: cover;
     background-position: center center; }
-    .modal-box .image-2:last-child {
+    .is-select .image-2:last-child {
       margin-bottom: 0; }
-  .modal-box .image-3 {
+  .is-select .image-3 {
     height: 300px;
     margin-bottom: 20px;
     background-image: url(../../images/portfolio/portfolio3.jpeg);
     background-size: cover;
     background-position: center center; }
-    .modal-box .image-3:last-child {
+    .is-select .image-3:last-child {
       margin-bottom: 0; }
-  .modal-box .image-4 {
+  .is-select .image-4 {
     height: 300px;
     margin-bottom: 20px;
     background-image: url(../../images/portfolio/portfolio4.jpeg);
     background-size: cover;
     background-position: center center; }
-    .modal-box .image-4:last-child {
+    .is-select .image-4:last-child {
       margin-bottom: 0; }
-  .modal-box .image-5 {
+  .is-select .image-5 {
     height: 300px;
     margin-bottom: 20px;
     background-image: url(../../images/portfolio/portfolio5.jpeg);
     background-size: cover;
     background-position: center center; }
-    .modal-box .image-5:last-child {
+    .is-select .image-5:last-child {
       margin-bottom: 0; }
-  .modal-box .upload-image {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer; }
-  .modal-box form {
+
+.upload-image {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .upload-image form {
     margin-bottom: 0; }
-    .modal-box form input[type=file] {
+    .upload-image form input[type=file] {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -204,7 +171,7 @@ form {
       top: 0;
       opacity: 0;
       cursor: pointer; }
-    .modal-box form .add-button {
+    .upload-image form .add-button {
       height: 300px;
       width: 100%;
       border: 1px solid transparent;
@@ -212,9 +179,22 @@ form {
       background-color: white;
       display: flex;
       align-items: center;
-      justify-content: center; }
-      .modal-box form .add-button i {
+      justify-content: center;
+      border-radius: 5px; }
+      .upload-image form .add-button i {
         font-size: 4rem;
         color: #9a9a9a; }
+
+.project-image {
+  height: 300px;
+  width: 100%;
+  position: relative; }
+  .project-image img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    object-fit: cover; }
 
 /*# sourceMappingURL=admin.css.map */

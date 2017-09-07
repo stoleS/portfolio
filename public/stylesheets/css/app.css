@@ -308,48 +308,17 @@ button {
     .portfolio-section h1 span:after {
       content: "P";
       color: #00d1b2; }
-.portfolio-section .port-1 {
-  min-height: 220px;
-  width: 100%;
+.portfolio-section .port {
   height: 100%;
-  background-image: url(../../images/portfolio1.jpeg);
-  background-size: cover;
-  background-position: center center; }
-.portfolio-section .port-2 {
-  min-height: 220px;
   width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio2.jpeg);
-  background-size: cover;
-  background-position: center center; }
-.portfolio-section .port-3 {
-  min-height: 220px;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio3.jpeg);
-  background-size: cover;
-  background-position: center center; }
-.portfolio-section .port-4 {
-  min-height: 220px;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio4.jpeg);
-  background-size: cover;
-  background-position: center center; }
-.portfolio-section .port-5 {
-  min-height: 220px;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio5.jpeg);
-  background-size: cover;
-  background-position: center center; }
-.portfolio-section .port-6 {
-  min-height: 220px;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../images/portfolio6.jpeg);
-  background-size: cover;
-  background-position: center center; }
+  min-height: 200px;
+  position: relative; }
+  .portfolio-section .port img {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    object-fit: cover; }
 
 .testimonials-section .box {
   box-shadow: 4px 3px 0px #fff, 12px 10px 0px rgba(0, 0, 0, 0.15);
