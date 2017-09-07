@@ -11,4 +11,4 @@ This is portfolio website featuring personal blog with backend written in node.j
 
 <sub>*this features will be added soon</sub>
 
-## Screenshots wil be added soon
+## Screenshots will be added soon
