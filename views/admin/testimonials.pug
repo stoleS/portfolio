@@ -1,4 +1,59 @@
 extends adminlayout
 
 block content
-	h1.title Testimonials
+	section.section
+		.tabs.is-centered.is-toggle
+			ul
+				li#all-tab.is-active
+					a(onClick="switchToAll()") All testimonials
+				li#add-tab
+					a(onClick="switchToAdd()") Add testimonial
+	.conatiner
+		#all-tab-content
+			.columns
+				.column.is-8.is-offset-2
+					table.table.is-fullwidth.is-bordered
+						thead
+							th.has-text-centered Author
+							th.has-text-centered Firm
+							th.has-text-centered Job
+							th.has-text-centered Text
+							th.has-text-centered Action
+						tbody
+							if testimonials
+								each testimonial, i in testimonials
+									tr
+										td.has-text-centered=testimonial.author
+										td.has-text-centered=testimonial.firm
+										td.has-text-centered=testimonial.job
+										td.has-text-centered=testimonial.text
+										td
+											.field.is-grouped
+												.control
+													a(href='/admin/testimonials/' + testimonial._id + '/delete').button.is-danger Delete
+		#add-tab-content.hidden
+			.columns
+				.column.is-half.is-offset-one-quarter
+					form(method='post', action='./testimonials', enctype='application/x-www-form-urlencoded')
+						.field
+							label.label Author:
+								.control
+									input.input(type='text', name='testimonialAuthor', required)
+						.field
+							label.label Firm:
+								.control
+									input.input(type='text', name='testimonialAuthorFirm', required)
+						.field
+							label.label Job:
+								.control
+									input.input(type='text', name='testimonialAuthorJob', required)
+						.field
+							label.label Text:
+							.control
+								textarea.textarea(name='testimonialText', rows='5', required)
+						.field.is-grouped
+							.control
+								button.button.is-success(type='submit') Submit
+							.control
+								input.button(type='reset')
+	script(src='../javascripts/tabs.js') 

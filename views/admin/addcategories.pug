@@ -4,38 +4,38 @@ block content
 	section.section
 		.tabs.is-centered.is-toggle
 			ul
-				li.is-active
-					a Categories
+				li#all-tab.is-active
+					a(onClick="switchToAll()") All categories
+				li#add-tab
+					a(onClick="switchToAdd()") Add category
 	.conatiner
-		.columns
-			.column.is-2.is-offset-5
-				table.table.is-fullwidth.is-bordered
-					thead
-						th.has-text-centered Category title
-						th.has-text-centered Action
-					tbody
-						if categories
-							each category, i in categories
-								tr
-									td.has-text-centered=category.title
-									td
-										.field.is-grouped
-											.control
-												a(href='/admin/categories/' + category._id + '/delete').button.is-danger Delete
-	section.section
-		.tabs.is-centered.is-toggle
-			ul
-				li.is-active
-					a Add category
-		.columns
-				.column.is-half.is-offset-one-quarter
-					form(method='post', action='./categories', enctype='application/x-www-form-urlencoded')
-						.field
-							label.label Category name:
-							.control
-								input.input(type='text', name='categoryName', required)
-						.field.is-grouped
-							.control
-								button.button.is-success Submit
-							.control
-								input.button(type='reset')
+		#all-tab-content
+			.columns
+				.column.is-4.is-offset-4
+					table.table.is-fullwidth.is-bordered
+						thead
+							th.has-text-centered Category title
+							th.has-text-centered Action
+						tbody
+							if categories
+								each category, i in categories
+									tr
+										td.has-text-centered=category.title
+										td
+											.field.is-grouped
+												.control
+													a(href='/admin/categories/' + category._id + '/delete').button.is-danger Delete
+		#add-tab-content.hidden
+			.columns
+					.column.is-half.is-offset-one-quarter
+						form(method='post', action='./categories', enctype='application/x-www-form-urlencoded')
+							.field
+								label.label Category name:
+								.control
+									input.input(type='text', name='categoryName', required)
+							.field.is-grouped
+								.control
+									button.button.is-success Submit
+								.control
+									input.button(type='reset')
+	script(src='../javascripts/tabs.js')

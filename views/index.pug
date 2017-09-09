@@ -102,21 +102,23 @@ block content
 		.hero-body
 			div.container.has-text-centered
 				h1.title.is-2 #[span]estimonials
-				div.columns
-					div.column.is-8.is-offset-2
-						div.box.has-ribbon-left
-							div.ribbon 
-								span.is-medium
-									i.fa.fa-quote-left
-							figure.image.is-96x96
-							p.subtitle.testimonial
-								|	“There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
-							p.subtitle.is-6 
-								b Jeff Atwood
-								| 
-								br
-								|
-								small Designer, Something
+				if testimonials
+					each testimonial, i in testimonials
+						div.columns
+							div.column.is-8.is-offset-2
+								div.box.has-ribbon-left
+									div.ribbon 
+										span.is-medium
+											i.fa.fa-quote-left
+									figure.image.is-96x96
+									p.subtitle.testimonial
+										q=testimonial.text
+									p.subtitle.is-6 
+										b=testimonial.author
+										| 
+										br
+										|
+										small=testimonial.job + ", " + testimonial.firm 
 	section.hero.blog-section.is-fullheight.layout-box.has-ribbon-left
 		div.ribbon 
 			span.is-medium
