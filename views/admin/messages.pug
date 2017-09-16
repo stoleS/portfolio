@@ -1,0 +1,9 @@
+extends adminlayout
+
+block content
+	if messages
+		each message, i in messages 
+			p=message.name
+			p=message.email
+			p=message.message 
+			p=moment(message.date).format('DD.MM.YYYY, HH:mm')

@@ -67,7 +67,8 @@ router.post('/', upload.single('mainImage'), function(req, res, next) {
 		'shortBody': shortBody,
 		'body': body,
 		'author': author,
-		'mainImage': mainImage
+		'mainImage': mainImage,
+		'date': date
 	}, function(err, post){
 		if(err) {
 			res.send('There was an issue submitting the post');

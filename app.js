@@ -20,6 +20,7 @@ var posts = require('./routes/admin/posts');
 var categories = require('./routes/admin/categories');
 var projects = require('./routes/admin/projects');
 var testimonials = require('./routes/admin/testimonials');
+var userMessages = require('./routes/admin/messages');
 
 var app = express();
 
@@ -84,6 +85,7 @@ app.use('/admin/posts', posts);
 app.use('/admin/categories', categories);
 app.use('/admin/projects', projects);
 app.use('/admin/testimonials', testimonials);
+app.use('/admin/messages', userMessages)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

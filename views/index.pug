@@ -172,21 +172,22 @@ block content
 					p Feel free to ask anything.
 				div.columns
 					div.column.is-half.is-offset-one-quarter(style="margin-bottom: 36px").contact-form
-						div.field
-							p.control
-								input.input(type='text' placeholder='Name')
-						div.field
-							p.control
-								input.input(type='email' placeholder='Email')
-						div.field
-							p.control
-								textarea.textarea(placeholder='Enter Message')
-						div.level
-							div.level-left
-								div.level-item
-							div.level-right
-								div.level-item
-									button.button.is-primary Submit
+						form(method='post', action='admin/messages', enctype='application/x-www-form-urlencoded')
+							div.field
+								p.control
+									input.input(type='text' placeholder='Name' name='name' required)
+							div.field
+								p.control
+									input.input(type='email' placeholder='Email' name='email' required)
+							div.field
+								p.control
+									textarea.textarea(placeholder='Enter Message' name='message')
+							div.level
+								div.level-left
+									div.level-item
+								div.level-right
+									div.level-item
+										button.button.is-primary(type='submit') Submit
 				div.columns
 					div.column.is-4.is-offset-4
 						nav.level
