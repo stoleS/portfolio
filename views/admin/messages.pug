@@ -4,15 +4,15 @@ block content
 	section.hero.portfolio-section
 		.hero-body
 			.container
-				table.table.is-fullwidth.is-bordered
-					thead
-						th Name
-						th Email
-						th Message
-						th Date
-						th Action
-					tbody
-						if messages
+				if messages != ""
+					table.table.is-fullwidth.is-bordered
+						thead
+							th Name
+							th Email
+							th Message
+							th Date
+							th Action
+						tbody
 							each message, i in messages 
 								tr
 									td=message.name
@@ -24,4 +24,6 @@ block content
 											.control
 												a(href='#').button.is-info Show
 											.control
-												a(href='/admin/messages/' + message._id + '/delete').button.is-danger Delete              
+												a(href='/admin/messages/' + message._id + '/delete').button.is-danger Delete  
+				else
+					h1.title.has-text-centered There are no messages            
