@@ -38,4 +38,12 @@ router.post('/', function(req, res, next) {
 	});
 });
 
+router.get('/:id/delete', function(req, res, next) {
+	var messages = db.get('messages');
+	var id = req.params.id;
+	messages.remove({_id: id}, function(err) {
+		res.redirect('back');
+	});
+});
+
 module.exports = router;
