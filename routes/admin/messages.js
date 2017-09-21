@@ -16,6 +16,8 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+
+// Add messages to db
 router.post('/', function(req, res, next) {
 	var name           = req.body.name;
 	var email          = req.body.email;
