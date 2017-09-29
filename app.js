@@ -5,16 +5,19 @@ var logger = require('morgan');
 var expressValidator = require('express-validator');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var passport = require('passport');
+var localStrategy = require('passport-local'), Strategy;
 var bodyParser = require('body-parser');
 var async = require("async");
 var mongo = require('mongodb');
 var db = require('monk')('localhost/myblog');
 var multer = require('multer');
 var upload = multer({ dest: './public/images/uploads' })
-var flash = require('connect-flash')
+var flash = require('connect-flash');
 
 var index = require('./routes/index');
 var blog = require('./routes/blog');
+var login = require('./routes/admin/login');
 var admin = require('./routes/admin/admin');
 var posts = require('./routes/admin/posts');
 var categories = require('./routes/admin/categories');
@@ -44,6 +47,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 // express validator
 app.use(expressValidator({
@@ -69,6 +74,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 app.use(function(req, res, next) {
 	res.locals.messages = require('express-messages')(req, res);
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
 	next();
 });
 
@@ -80,6 +87,7 @@ app.use(function(req, res, next) {
 
 app.use('/', index);
 app.use('/blog', blog);
+app.use('/admin/login', login);
 app.use('/admin', admin);
 app.use('/admin/posts', posts);
 app.use('/admin/categories', categories);

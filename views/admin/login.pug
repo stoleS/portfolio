@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title=title
+    link(rel='stylesheet', href='/stylesheets/bulma.css')
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+  body
+    section.hero.is-fullheight.is-light.is-bold
+      .hero-body
+        .container
+          .columns.is-vcentered
+            .column.is-4.is-offset-4
+              h1.title.has-text-centered
+                | Log in
+              .box
+                form(method='post', action='./login', enctype='application/x-www-form-urlencoded')
+                  label.label Username
+                  p.control
+                    input.input(type='text', name='username', required)
+                  label.label Password
+                  p.control
+                    input.input(type='password', name='password', required)
+                  hr
+                  p.control
+                    button.button.is-primary(type='submit') Log in
+                    button.button.is-default Cancel
+
